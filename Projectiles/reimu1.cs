@@ -3,7 +3,7 @@ using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
 
-namespace HZDZTOUHOU
+namespace HZDZTOUHOU.Projectiles
 {
     public class reimu1 : ModProjectile
     {
@@ -31,14 +31,14 @@ namespace HZDZTOUHOU
 
         public override void AI()
         {
-            
+
             Projectile.rotation = Projectile.velocity.ToRotation();
             Projectile.spriteDirection = Projectile.direction;
 
         }
-        
-        
-        
+
+
+
         // Additional hooks/methods here.
     }
 }
