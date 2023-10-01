@@ -1,0 +1,9 @@
+Items: {
+	EasyReimuSummoner: {
+		DisplayName: Attractive Copper
+		Tooltip: Use to summon boss Reimu
+	}
+}
+
+NPCs.reimu.DisplayName: Reimu
+Projectiles.reimu1.DisplayName: reimu's projectile

@@ -1,0 +1,23 @@
+
+Mods: {
+	HZDZTOUHOU: {
+		Items: {
+			EasyReimuSummoner: {
+				DisplayName: Reimu Summoner
+				Tooltip: Use to attract boss Reimu(easy)
+			}
+
+			hzdztouhou: {
+				DisplayName: hzdztouhou
+				Tooltip: This is a basic modded sword.
+			}
+		}
+
+		NPCs: {
+			reimu.DisplayName: Reimu
+			reimunormal.DisplayName: 灵梦
+		}
+
+		Projectiles.reimu1.DisplayName: reimu's projectile
+	}
+}
