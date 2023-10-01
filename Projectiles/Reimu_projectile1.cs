@@ -5,7 +5,7 @@ using Terraria.ModLoader;
 
 namespace HZDZTOUHOU.Projectiles
 {
-    public class reimu1 : ModProjectile
+    public class Reimu_projectile1 : ModProjectile
     {
         public override void SetStaticDefaults()
         {
