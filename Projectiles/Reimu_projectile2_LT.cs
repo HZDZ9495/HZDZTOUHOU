@@ -5,7 +5,7 @@ using Terraria.ModLoader;
 
 namespace HZDZTOUHOU.Projectiles
 {
-    public class Reimu_projectile1 : ModProjectile
+    public class Reimu_projectile2_LT : ModProjectile
     {
         public override void SetStaticDefaults()
         {
@@ -21,10 +21,10 @@ namespace HZDZTOUHOU.Projectiles
             Projectile.friendly = false;
             Projectile.DamageType = DamageClass.Ranged;
             Projectile.light = 1f;
-            Projectile.scale = 1f;
+            Projectile.scale = 1.2f;
             Projectile.hostile = true;
             Projectile.maxPenetrate = 1;
-            Projectile.timeLeft = 120;
+            Projectile.timeLeft = 600;
             Projectile.tileCollide = false;
             AIType = ProjectileID.Bullet;
         }

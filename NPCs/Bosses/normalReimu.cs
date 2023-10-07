@@ -5,6 +5,7 @@ using Microsoft.Xna.Framework;
 using System;
 using System.Collections.Generic;
 using System.Runtime.Intrinsics.Arm;
+using Mono.Cecil;
 
 namespace HZDZTOUHOU.NPCs.Bosses
 {
@@ -55,7 +56,7 @@ namespace HZDZTOUHOU.NPCs.Bosses
             int state = 1;
             
 
-            //根据难度设置值
+            //根据难度设置伤害值
             int dmg = NPC.damage;
             if (Main.masterMode == true)
             {
@@ -74,10 +75,97 @@ namespace HZDZTOUHOU.NPCs.Bosses
 
             }
 
-            
+            //设置阶段
+            if(NPC.life>=(NPC.lifeMax * 0.8f))
+            {
+                state = 1;
+            }
 
-            //P1 P3 向玩家移动 距离150格停下
-            if (state != 2)
+            //P1 每1秒发射n4/e5/m6连发的射弹(预判）
+            int count, chance;
+            if (Main.masterMode == true)
+            {
+                count = 17;
+                chance = 50;
+            }
+            else
+            {
+                if (Main.expertMode == true)
+                {
+                    count = 14;
+                    chance = 35;
+                }
+                else
+                {
+                    count = 11;
+                    chance = 20;
+                }
+
+            }
+            
+            if (NPC.ai[0] % 60 <= count && NPC.ai[0] % 3 == 0 && state == 1)
+            {
+
+                NPC.TargetClosest();
+                if (NPC.HasValidTarget && Main.netMode != NetmodeID.MultiplayerClient)
+                {
+                    var source = NPC.GetSource_FromAI();
+                    Vector2 position = NPC.Center;
+                    Vector2 targetPosition = Main.player[NPC.target].Center;
+                    //Vector2 targetVelocity = Main.player[NPC.target].velocity;
+                    //targetVelocity.Normalize();
+                    //float speed2 = Math.Abs(Main.player[NPC.target].velocity.X / targetVelocity.X);
+                    Random rd1 = new Random();
+                    //int time1 = rd1.Next((int)speed2 * 2, (int)speed2 * 5);
+                    int time1 = rd1.Next(45, 75);
+                    float speed1 = 12f;
+                    Vector2 direction = (targetPosition - position + Main.player[NPC.target].velocity * time1) / (speed1 * time1);
+                    direction.Normalize();
+                    
+                    //按概率替换伤害增加的射弹
+                    if(rd1.Next(1,100)<=chance)
+                    {
+                        int type = Mod.Find<ModProjectile>("Reimu_projectile2_LT").Type;
+                        if (Main.netMode != NetmodeID.MultiplayerClient)
+                        {
+                            Projectile.NewProjectile(source, position, direction * speed1, type, (int)(dmg * 1.5f), 0f, Main.myPlayer);
+                        }
+                    }
+                    else
+                    {
+                        int type = Mod.Find<ModProjectile>("Reimu_projectile1_LT").Type;
+                        if (Main.netMode != NetmodeID.MultiplayerClient)
+                        {
+                            Projectile.NewProjectile(source, position, direction * speed1, type, dmg, 0f, Main.myPlayer);
+                        }
+                    }
+                }
+
+            }
+            
+            if (NPC.ai[0]%30==1 && state == 1)
+            {
+                NPC.TargetClosest();
+                var source = NPC.GetSource_FromAI();
+                Vector2 position = Main.player[NPC.target].Center;
+                float speed1 = 0.001f;
+                Random rd2 = new Random();
+                int angel1 = rd2.Next(1, 360);
+                var PI = MathF.PI;
+                float distance = 200f;
+                position.X += MathF.Cos(angel1 / 180f * PI) * distance;
+                position.Y += MathF.Sin(angel1 / 180f * PI) * distance;
+                Vector2 direction = Main.player[NPC.target].Center - position;
+                direction.Normalize();
+                int type = Mod.Find<ModProjectile>("Reimu_projectile1_DL").Type;
+                if (Main.netMode != NetmodeID.MultiplayerClient)
+                {
+                    Projectile.NewProjectile(source, position, direction * speed1, type, dmg, 0f, Main.myPlayer);
+                }
+            }
+
+            //P1 向玩家移动 距离150格停下
+            if (state == 1)
             {
                 NPC.TargetClosest();
                 Player target = Main.player[NPC.target];
@@ -97,7 +185,7 @@ namespace HZDZTOUHOU.NPCs.Bosses
                         //Random rd2 = new Random();
                         //targetPosition.X += rd2.Next(-50, 50);
                         //targetPosition.Y += rd2.Next(-50, 50);
-                        float speed3 = 4f;
+                        float speed3 = 8f;
                         Vector2 ToPlayer = NPC.DirectionTo(targetPosition) * speed3;
                         NPC.velocity = ToPlayer;
                     }

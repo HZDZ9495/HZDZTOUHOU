@@ -5,8 +5,15 @@ Items: {
 	}
 }
 
-NPCs.reimu.DisplayName: Reimu
+NPCs: {
+	reimu.DisplayName: Reimu
+	normalReimu.DisplayName: normal Reimu
+}
 
 Projectiles: {
 	Reimu_projectile1.DisplayName: Reimu's projectile
+	Reimu_projectile2.DisplayName: Reimu_projectile2
+	Reimu_projectile1_LT.DisplayName: Reimu_projectile1_ L T
+	Reimu_projectile2_LT.DisplayName: Reimu_projectile2_ L T
+	Reimu_projectile1_DL.DisplayName: Reimu_projectile1_ D L
 }

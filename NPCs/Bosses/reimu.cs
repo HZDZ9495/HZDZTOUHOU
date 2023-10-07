@@ -163,7 +163,7 @@ namespace HZDZTOUHOU.NPCs.Bosses
                     Vector2 direction = targetPosition - position;
                     direction.Normalize();
                     float speed1 = 8f;
-                    int type = Mod.Find<ModProjectile>("Reimu_projectile1").Type;
+                    int type = Mod.Find<ModProjectile>("Reimu_projectile1_LT").Type;
                     //int damage = NPC.damage; //If the projectile is hostile, the damage passed into NewProjectile will be applied doubled, and quadrupled if expert mode, so keep that in mind when balancing projectiles if you scale it off NPC.damage (which also increases for expert/master)
                     if (Main.netMode != NetmodeID.MultiplayerClient)
                     {
@@ -194,7 +194,7 @@ namespace HZDZTOUHOU.NPCs.Bosses
                         direction.Y = MathF.Sin(NPC.ai[1] / 180f * PI);
                         direction.Normalize();
                         float speed2 = 7f;
-                        int type = Mod.Find<ModProjectile>("Reimu_projectile1").Type;
+                        int type = Mod.Find<ModProjectile>("Reimu_projectile1_LT").Type;
                         if (Main.netMode != NetmodeID.MultiplayerClient)
                         {
                             Projectile.NewProjectile(source, position, direction * speed2, type, dmg, 0f, Main.myPlayer);
@@ -223,7 +223,7 @@ namespace HZDZTOUHOU.NPCs.Bosses
                             direction.Y = MathF.Sin(NPC.ai[1] / 180f * PI);
                             direction.Normalize();
                             float speed2 = 7f;
-                            int type = Mod.Find<ModProjectile>("Reimu_projectile1").Type;
+                            int type = Mod.Find<ModProjectile>("Reimu_projectile1_LT").Type;
                             if (Main.netMode != NetmodeID.MultiplayerClient)
                             {
                                 Projectile.NewProjectile(source, position, direction * speed2, type, dmg, 0f, Main.myPlayer);
@@ -250,7 +250,7 @@ namespace HZDZTOUHOU.NPCs.Bosses
                             direction.Y = MathF.Sin(NPC.ai[1] / 180f * PI);
                             direction.Normalize();
                             float speed2 = 7f;
-                            int type = Mod.Find<ModProjectile>("Reimu_projectile1").Type;
+                            int type = Mod.Find<ModProjectile>("Reimu_projectile1_LT").Type;
                             if (Main.netMode != NetmodeID.MultiplayerClient)
                             {
                                 Projectile.NewProjectile(source, position, direction * speed2, type, dmg, 0f, Main.myPlayer);
@@ -283,7 +283,7 @@ namespace HZDZTOUHOU.NPCs.Bosses
                         direction.Y = MathF.Sin(NPC.ai[1] / 180f * PI);
                         direction.Normalize();
                         float speed2 = 6f;
-                        int type = Mod.Find<ModProjectile>("Reimu_projectile1").Type;
+                        int type = Mod.Find<ModProjectile>("Reimu_projectile1_LT").Type;
                         if (Main.netMode != NetmodeID.MultiplayerClient)
                         {
                             Projectile.NewProjectile(source, position, direction * speed2, type, dmg, 0f, Main.myPlayer);
@@ -304,7 +304,7 @@ namespace HZDZTOUHOU.NPCs.Bosses
                         direction.Y = MathF.Sin(NPC.ai[1] / 180f * PI);
                         direction.Normalize();
                         float speed2 = 6f;
-                        int type = Mod.Find<ModProjectile>("Reimu_projectile1").Type;
+                        int type = Mod.Find<ModProjectile>("Reimu_projectile1_LT").Type;
                         if (Main.netMode != NetmodeID.MultiplayerClient)
                         {
                             Projectile.NewProjectile(source, position, direction * speed2, type, dmg, 0f, Main.myPlayer);
@@ -334,7 +334,7 @@ namespace HZDZTOUHOU.NPCs.Bosses
                             direction.Y = MathF.Sin(NPC.ai[1] / 180f * PI);
                             direction.Normalize();
                             float speed2 = 6f;
-                            int type = Mod.Find<ModProjectile>("Reimu_projectile1").Type;
+                            int type = Mod.Find<ModProjectile>("Reimu_projectile1_LT").Type;
                             if (Main.netMode != NetmodeID.MultiplayerClient)
                             {
                                 Projectile.NewProjectile(source, position, direction * speed2, type, dmg, 0f, Main.myPlayer);
@@ -355,7 +355,7 @@ namespace HZDZTOUHOU.NPCs.Bosses
                             direction.Y = MathF.Sin(NPC.ai[1] / 180f * PI);
                             direction.Normalize();
                             float speed2 = 6f;
-                            int type = Mod.Find<ModProjectile>("Reimu_projectile1").Type;
+                            int type = Mod.Find<ModProjectile>("Reimu_projectile1_LT").Type;
                             if (Main.netMode != NetmodeID.MultiplayerClient)
                             {
                                 Projectile.NewProjectile(source, position, direction * speed2, type, dmg, 0f, Main.myPlayer);
@@ -383,7 +383,7 @@ namespace HZDZTOUHOU.NPCs.Bosses
                             direction.Y = MathF.Sin(NPC.ai[1] / 180f * PI);
                             direction.Normalize();
                             float speed2 = 6f;
-                            int type = Mod.Find<ModProjectile>("Reimu_projectile1").Type;
+                            int type = Mod.Find<ModProjectile>("Reimu_projectile1_LT").Type;
                             if (Main.netMode != NetmodeID.MultiplayerClient)
                             {
                                 Projectile.NewProjectile(source, position, direction * speed2, type, dmg, 0f, Main.myPlayer);
@@ -404,7 +404,7 @@ namespace HZDZTOUHOU.NPCs.Bosses
                             direction.Y = MathF.Sin(NPC.ai[1] / 180f * PI);
                             direction.Normalize();
                             float speed2 = 6f;
-                            int type = Mod.Find<ModProjectile>("Reimu_projectile1").Type;
+                            int type = Mod.Find<ModProjectile>("Reimu_projectile1_LT").Type;
                             if (Main.netMode != NetmodeID.MultiplayerClient)
                             {
                                 Projectile.NewProjectile(source, position, direction * speed2, type, dmg, 0f, Main.myPlayer);
@@ -436,7 +436,7 @@ namespace HZDZTOUHOU.NPCs.Bosses
                         direction.Y = MathF.Sin(NPC.ai[1] / 180f * PI);
                         direction.Normalize();
                         float speed2 = 6f;
-                        int type = Mod.Find<ModProjectile>("Reimu_projectile1").Type;
+                        int type = Mod.Find<ModProjectile>("Reimu_projectile1_LT").Type;
                         if (Main.netMode != NetmodeID.MultiplayerClient)
                         {
                             Projectile.NewProjectile(source, position, direction * speed2, type, dmg, 0f, Main.myPlayer);
@@ -465,7 +465,7 @@ namespace HZDZTOUHOU.NPCs.Bosses
                             direction.Y = MathF.Sin(NPC.ai[1] / 180f * PI);
                             direction.Normalize();
                             float speed2 = 6f;
-                            int type = Mod.Find<ModProjectile>("Reimu_projectile1").Type;
+                            int type = Mod.Find<ModProjectile>("Reimu_projectile1_LT").Type;
                             if (Main.netMode != NetmodeID.MultiplayerClient)
                             {
                                 Projectile.NewProjectile(source, position, direction * speed2, type, dmg, 0f, Main.myPlayer);
@@ -496,7 +496,7 @@ namespace HZDZTOUHOU.NPCs.Bosses
                         direction.Y = MathF.Sin(NPC.ai[1] / 180f * PI);
                         direction.Normalize();
                         float speed2 = 6f;
-                        int type = Mod.Find<ModProjectile>("Reimu_projectile1").Type;
+                        int type = Mod.Find<ModProjectile>("Reimu_projectile1_LT").Type;
                         if (Main.netMode != NetmodeID.MultiplayerClient)
                         {
                             Projectile.NewProjectile(source, position, direction * speed2, type, dmg, 0f, Main.myPlayer);
@@ -525,7 +525,7 @@ namespace HZDZTOUHOU.NPCs.Bosses
                             direction.Y = MathF.Sin(NPC.ai[1] / 180f * PI);
                             direction.Normalize();
                             float speed2 = 6f;
-                            int type = Mod.Find<ModProjectile>("Reimu_projectile1").Type;
+                            int type = Mod.Find<ModProjectile>("Reimu_projectile1_LT").Type;
                             if (Main.netMode != NetmodeID.MultiplayerClient)
                             {
                                 Projectile.NewProjectile(source, position, direction * speed2, type, dmg, 0f, Main.myPlayer);
@@ -596,7 +596,7 @@ namespace HZDZTOUHOU.NPCs.Bosses
                             Random rd4 = new Random();
                             int count1 = 12;
                             
-                            if (NPC.ai[0] % 300 == 0 && state == 2)
+                            if (NPC.ai[0] % 240 == 0 && state == 2)
                             {
                                 NPC.ai[1] = rd4.Next(0, 360 / count1);
                                 for (int i = 0; i < count1; i += 1)
@@ -611,7 +611,7 @@ namespace HZDZTOUHOU.NPCs.Bosses
                                     Vector2 direction = player.Center - position ;
                                     direction.Normalize();
                                     float speed2 = 1.6f;
-                                    int type = Mod.Find<ModProjectile>("Reimu_projectile1").Type;
+                                    int type = Mod.Find<ModProjectile>("Reimu_projectile1_LT").Type;
                                     if (Main.netMode != NetmodeID.MultiplayerClient)
                                     {
                                         Projectile.NewProjectile(source, position, direction * speed2, type, dmg, 0f, Main.myPlayer);
@@ -626,7 +626,7 @@ namespace HZDZTOUHOU.NPCs.Bosses
                                 Random rd4 = new Random();
                                 int count1 = 10;
 
-                                if (NPC.ai[0] % 360 == 0 && state == 2)
+                                if (NPC.ai[0] % 240 == 0 && state == 2)
                                 {
                                     NPC.ai[1] = rd4.Next(0, 360 / count1);
                                     for (int i = 0; i < count1; i += 1)
@@ -641,7 +641,7 @@ namespace HZDZTOUHOU.NPCs.Bosses
                                         Vector2 direction = player.Center - position;
                                         direction.Normalize();
                                         float speed2 = 1.2f;
-                                        int type = Mod.Find<ModProjectile>("Reimu_projectile1").Type;
+                                        int type = Mod.Find<ModProjectile>("Reimu_projectile1_LT").Type;
                                         if (Main.netMode != NetmodeID.MultiplayerClient)
                                         {
                                             Projectile.NewProjectile(source, position, direction * speed2, type, dmg, 0f, Main.myPlayer);
